@@ -1,0 +1,522 @@
+[gd_scene format=3 uid="uid://bve1auti275yp"]
+
+[ext_resource type="Script" uid="uid://dtsb2mjmgpm1r" path="res://scripts/player.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://00cgiqmlx0vs" path="res://assets/grass 17 - 128x128.png" id="1_trceg"]
+[ext_resource type="PackedScene" uid="uid://blyvpmbeb4t77" path="res://scenes/dori_home.tscn" id="2_0xm2m"]
+[ext_resource type="AudioStream" uid="uid://5e36kksuuwni" path="res://audio/steps/Linoleum_Mono_01.wav" id="2_choun"]
+[ext_resource type="Script" uid="uid://rej6hs343eug" path="res://scripts/camera_3d.gd" id="2_h2yge"]
+[ext_resource type="AudioStream" uid="uid://uh70au3n3rfc" path="res://audio/steps/Linoleum_Mono_02.wav" id="4_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://nl47bjijmypg" path="res://scenes/3d-Printer.tscn" id="4_jyhfs"]
+[ext_resource type="AudioStream" uid="uid://pcqhooxn5wh6" path="res://audio/steps/Linoleum_Mono_03.wav" id="5_jkv2x"]
+[ext_resource type="AudioStream" uid="uid://b2l03qnhx1ot8" path="res://audio/darkness/dk-theroom.wav" id="5_tbgi4"]
+[ext_resource type="AudioStream" uid="uid://lvlfqxbrucoi" path="res://audio/steps/Linoleum_Mono_04.wav" id="6_jbj1t"]
+[ext_resource type="AudioStream" uid="uid://c8jlpqg2uf5k6" path="res://audio/steps/Linoleum_Mono_05.wav" id="7_muem4"]
+[ext_resource type="Script" uid="uid://by5ev4t8odj78" path="res://scenes/the_room_area.gd" id="10_choun"]
+[ext_resource type="Script" uid="uid://bgjq1m6twb3lc" path="res://scenes/bed_area.gd" id="11_ya4ey"]
+[ext_resource type="Script" uid="uid://cq2y8hqj0cbjv" path="res://scenes/assembly_room.gd" id="13_trceg"]
+[ext_resource type="AudioStream" uid="uid://cxfnu0da7m1oh" path="res://assets/audio/freesound_community-doorpoundotherroom-100096.mp3" id="14_jkv2x"]
+[ext_resource type="Script" uid="uid://c14w4ilyoubyb" path="res://scenes/window_sighting_area.gd" id="16_jbj1t"]
+[ext_resource type="AudioStream" uid="uid://c5ulqekpmaggr" path="res://audio/universfield-rising-horror-tension-130803.mp3" id="16_vxglm"]
+[ext_resource type="Script" uid="uid://cgtomxttx2q0p" path="res://scenes/finale_sequence.gd" id="17_muem4"]
+[ext_resource type="PackedScene" uid="uid://sve56eabs0gh" path="res://jake.tscn" id="18_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://c6djb3h7bcd0m" path="res://assets/icons/world.png" id="20_tel4y"]
+[ext_resource type="Script" uid="uid://bstjij2ui3o6o" path="res://scenes/floating_icon.gd" id="20_y6deb"]
+[ext_resource type="Texture2D" uid="uid://dkrnx5ayqes12" path="res://assets/icons/recycle_bin_full.png" id="21_og1vs"]
+[ext_resource type="Texture2D" uid="uid://bnyafnlrlaesk" path="res://assets/icons/notepad.png" id="22_2wyq8"]
+[ext_resource type="Texture2D" uid="uid://dawb5024f6n4e" path="res://assets/icons/cd_drive.png" id="22_qkpxi"]
+[ext_resource type="Texture2D" uid="uid://c2puo3jvbdul6" path="res://assets/icons/icons_32x32 (1)/paint_alt.png" id="23_5q0nq"]
+[ext_resource type="Texture2D" uid="uid://dl8rph4ht7srb" path="res://assets/icons/folder_closed.png" id="23_vxglm"]
+[ext_resource type="Texture2D" uid="uid://b4fb6a3xmehig" path="res://assets/icons/this_computer.png" id="24_dgi5k"]
+[ext_resource type="Script" uid="uid://j2c5gkckn6q2" path="res://scenes/big_screen.gd" id="24_y6deb"]
+[ext_resource type="Texture2D" uid="uid://hh4rw2vqpris" path="res://assets/icons/icons_32x32 (1)/3d_graphics_program.png" id="25_j8jky"]
+[ext_resource type="AudioStream" uid="uid://cr7cbr56eqck8" path="res://audio/03 Dreamtime Healing (YAWURU GURRJIN).wav" id="25_og1vs"]
+[ext_resource type="AudioStream" uid="uid://bpngyfpf3l2a7" path="res://audio/freesound_community-sitting-in-computer-chair-gain_02-01-94009.mp3" id="26_2wyq8"]
+[ext_resource type="AudioStream" uid="uid://3e6ebafdqmqo" path="res://audio/ElevenLabs_2026-09-21T09_17_36_Jake 2_gen_sp80_s50_sb75_se0_b_m2.mp3" id="32_qkpxi"]
+
+[sub_resource type="Environment" id="Environment_jyhfs"]
+background_mode = 1
+background_energy_multiplier = 0.3
+ambient_light_source = 2
+ambient_light_color = Color(0.8646751, 0.86467516, 0.8646751, 1)
+ambient_light_energy = 0.01
+tonemap_mode = 3
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_light_energy = 0.0
+fog_density = 0.0658
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
+size = Vector3(2.0134277, 0.03564453, 2.0057373)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ig7tw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8y0u"]
+albedo_texture = ExtResource("1_trceg")
+uv1_scale = Vector3(20, 20, 20)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7dm0k"]
+height = 1.75
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ig7tw"]
+radius = 0.35009766
+height = 1.75
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eb6dy"]
+size = Vector3(3.3536339, 1.6972773, 3.148971)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ya4ey"]
+size = Vector3(4.125, 3.7321167, 3.9210205)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_muem4"]
+size = Vector3(3.7923584, 3.5020752, 5.708252)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3v8a5"]
+cull_mode = 1
+albedo_color = Color(0.83033526, 0.83033514, 0.83033514, 1)
+metallic_specular = 0.55
+roughness = 0.1
+grow = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_2f3dj"]
+material = SubResource("StandardMaterial3D_3v8a5")
+size = Vector3(20, 10, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yq6so"]
+size = Vector3(20.392822, 0.44189453, 20.454132)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_so6io"]
+size = Vector3(20.954712, 13.58783, 0.7824707)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iu2r0"]
+shading_mode = 0
+albedo_texture = ExtResource("20_tel4y")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_fuf3a"]
+material = SubResource("StandardMaterial3D_iu2r0")
+size = Vector2(0.6, 0.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pibwh"]
+shading_mode = 0
+albedo_texture = ExtResource("22_qkpxi")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_c6pm6"]
+material = SubResource("StandardMaterial3D_pibwh")
+size = Vector2(0.6, 0.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5he1u"]
+shading_mode = 0
+albedo_texture = ExtResource("23_5q0nq")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_5poiv"]
+material = SubResource("StandardMaterial3D_5he1u")
+size = Vector2(0.6, 0.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2cjbq"]
+shading_mode = 0
+albedo_texture = ExtResource("24_dgi5k")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_chjal"]
+material = SubResource("StandardMaterial3D_2cjbq")
+size = Vector2(0.6, 0.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cjqg0"]
+shading_mode = 0
+albedo_texture = ExtResource("25_j8jky")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_vchkt"]
+material = SubResource("StandardMaterial3D_cjqg0")
+size = Vector2(0.6, 0.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_blocw"]
+shading_mode = 0
+albedo_texture = ExtResource("21_og1vs")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_tel4y"]
+material = SubResource("StandardMaterial3D_blocw")
+size = Vector2(0.6, 0.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhh81"]
+shading_mode = 0
+albedo_texture = ExtResource("22_2wyq8")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_qkpxi"]
+material = SubResource("StandardMaterial3D_hhh81")
+size = Vector2(0.6, 0.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0r3y"]
+shading_mode = 0
+albedo_texture = ExtResource("23_vxglm")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_5q0nq"]
+material = SubResource("StandardMaterial3D_v0r3y")
+size = Vector2(0.6, 0.6)
+
+[sub_resource type="QuadMesh" id="QuadMesh_dgi5k"]
+material = SubResource("StandardMaterial3D_hhh81")
+size = Vector2(0.6, 0.6)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jg060"]
+viewport_path = NodePath("BlackRoom/ScreenViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_so6io"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_jg060")
+
+[sub_resource type="QuadMesh" id="QuadMesh_kmb1v"]
+material = SubResource("StandardMaterial3D_so6io")
+size = Vector2(8, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w8sno"]
+size = Vector3(19.738464, 10.968086, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3v8a5"]
+
+[node name="Node3D" type="Node3D" unique_id=1160689446]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2106575912]
+environment = SubResource("Environment_jyhfs")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=475324444]
+transform = Transform3D(22.351673, 0, 0, 0, 1.4417732, 0, 0, 0, 23.661407, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1193984282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0025634766, -0.0021972656, -0.002746582)
+shape = SubResource("BoxShape3D_7dm0k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=187448562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00088242814, -0.0032219857)
+mesh = SubResource("PlaneMesh_ig7tw")
+surface_material_override/0 = SubResource("StandardMaterial3D_a8y0u")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=836363976 groups=["Player"]]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -1.2067991, 0.9459382, 8.419783)
+collision_mask = 17
+script = ExtResource("1_ig7tw")
+footstep_clips = Array[AudioStream]([ExtResource("2_choun"), ExtResource("4_a8y0u"), ExtResource("5_jkv2x"), ExtResource("6_jbj1t"), ExtResource("7_muem4")])
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=915289363]
+transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 0.7, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_7dm0k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1119595985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.017578125, 0)
+shape = SubResource("CapsuleShape3D_ig7tw")
+
+[node name="CameraPivot" type="Node3D" parent="Player" unique_id=1016322628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44142663, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/CameraPivot" unique_id=1222387700]
+script = ExtResource("2_h2yge")
+
+[node name="FootstepSound" type="AudioStreamPlayer3D" parent="Player" unique_id=1224563756 groups=["world_audio"]]
+unique_name_in_owner = true
+stream = ExtResource("2_choun")
+volume_db = -30.0
+
+[node name="Dori_home" parent="." unique_id=2146266786 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.747, 0, 7.145)
+
+[node name="Lights" type="Node" parent="." unique_id=96499579]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights" unique_id=1276542358 groups=["room_lights"]]
+transform = Transform3D(1, 0, 0, 0, -0.049093813, 0.9987942, 0, -0.9987942, -0.049093813, -1.2696409, 2.8683646, 7.0902767)
+light_color = Color(1, 1, 0.84313726, 1)
+light_energy = 1.733
+shadow_enabled = true
+shadow_opacity = 0.8
+shadow_blur = 1.5
+spot_range = 30.658
+spot_angle = 86.94
+spot_angle_attenuation = 0.5946034
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=799051239 groups=["room_lights"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.657243, 2.4873304, -0.86317486)
+light_color = Color(1, 1, 0.9098039, 1)
+light_energy = 0.753
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_opacity = 0.8
+shadow_blur = 1.5
+omni_range = 6.709
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights" unique_id=165059165 groups=["room_lights"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6486297, 2.4873304, -1.8951098)
+light_color = Color(1, 1, 0.9098039, 1)
+light_energy = 0.753
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_opacity = 0.8
+shadow_blur = 1.5
+omni_range = 6.709
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lights" unique_id=1220766381 groups=["room_lights"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5876904, 2.7532537, -1.4055989)
+light_color = Color(1, 1, 0.9098039, 1)
+light_energy = 0.093
+shadow_opacity = 0.8
+shadow_blur = 1.5
+omni_range = 1.533
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights" unique_id=608583949 groups=["room_lights"]]
+transform = Transform3D(1, 0, 0, 0, -0.049093813, 0.9987942, 0, -0.9987942, -0.049093813, -7.7398815, 2.961249, -7.780381)
+light_color = Color(1, 1, 0.84313726, 1)
+light_energy = 2.891
+shadow_enabled = true
+shadow_opacity = 0.8
+shadow_blur = 1.5
+spot_range = 32.877
+spot_angle = 83.42
+spot_angle_attenuation = 0.2588161
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Lights" unique_id=1842323682 groups=["room_lights"]]
+transform = Transform3D(1, 0, 0, 0, -0.049093813, 0.9987942, 0, -0.9987942, -0.049093813, -0.4030323, 2.961249, -6.79488)
+light_color = Color(1, 1, 0.84313726, 1)
+light_energy = 0.162
+shadow_enabled = true
+shadow_opacity = 0.8
+shadow_blur = 1.5
+spot_range = 32.877
+spot_angle = 83.42
+spot_angle_attenuation = 0.2588161
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Lights" unique_id=268674480 groups=["room_lights"]]
+transform = Transform3D(1, 0, 0, 0, -0.049093813, 0.9987942, 0, -0.9987942, -0.049093813, -0.47279888, 2.9298322, -3.574126)
+light_color = Color(1, 1, 0.84313726, 1)
+light_energy = 0.454
+shadow_enabled = true
+shadow_opacity = 0.8
+shadow_blur = 1.5
+spot_range = 32.877
+spot_angle = 83.42
+spot_angle_attenuation = 0.2588161
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lights" unique_id=2127059167 groups=["room_lights"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3404527, 1.4212447, -2.596613)
+light_color = Color(1, 1, 0.9098039, 1)
+light_energy = 6.358
+light_size = 0.91
+light_cull_mask = 4294967293
+shadow_opacity = 0.8
+shadow_blur = 1.5
+omni_range = 0.47784466
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Lights" unique_id=980696972 groups=["room_lights"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.415195, 1.7170908, -2.2254786)
+light_energy = 0.35
+shadow_opacity = 0.8
+shadow_blur = 1.5
+spot_range = 0.214
+spot_angle = 53.16708
+spot_angle_attenuation = 1.3195065
+
+[node name="Sketchfab_Scene" parent="." unique_id=928610155 instance=ExtResource("4_jyhfs")]
+transform = Transform3D(-1.614053, 0, -1.41105e-07, 0, 1.614053, 0, 1.41105e-07, 0, -1.614053, -4.2566624, 0.95075953, -2.6452584)
+
+[node name="IntroCamera" type="Camera3D" parent="." unique_id=795478535 groups=["intro_camera"]]
+unique_name_in_owner = true
+transform = Transform3D(0.9992556, -0.0049811597, 0.038255893, 0.038255893, 0.25597614, -0.9659258, -0.00498116, 0.9666702, 0.25597617, -2.7184584, 0.7944951, 9.525588)
+cull_mask = 1048573
+current = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=834002145]
+stream = ExtResource("5_tbgi4")
+volume_db = -15.0
+autoplay = true
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1009069565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.2828176)
+script = ExtResource("11_ya4ey")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=911333529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8173623, 0.83210063, 6.1552916)
+shape = SubResource("BoxShape3D_eb6dy")
+
+[node name="AssemblyRoom" type="Node3D" parent="." unique_id=700102284 node_paths=PackedStringArray("f_lgt", "flk_snd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12379205, 0)
+script = ExtResource("13_trceg")
+fig_scn = ExtResource("18_dp3eg")
+f_lgt = NodePath("OmniLight3D")
+f_l_norm = Color(1, 0.007843138, 0.3019608, 1)
+flk_snd = NodePath("AudioStreamPlayer3D")
+
+[node name="4471" type="Marker3D" parent="AssemblyRoom" unique_id=1947182330]
+transform = Transform3D(-0.91354555, 0.4067367, 4.3545054e-08, 3.823084e-08, -2.1191704e-08, 1, 0.4067366, 0.9135458, 3.8096997e-09, -0.22100255, -0.09057236, 1.6580849)
+
+[node name="KnockSound" type="AudioStreamPlayer3D" parent="AssemblyRoom" unique_id=1071667848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4813864, 0.8276601, 3.3624833)
+stream = ExtResource("14_jkv2x")
+
+[node name="figure" type="Marker3D" parent="AssemblyRoom" unique_id=279589789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85779417, 1.194366)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="AssemblyRoom" unique_id=1529070132 groups=["figure_room_lights", "room_lights"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9898336, 1.8907868, 1.5756078)
+light_color = Color(0.6322254, 1.9492954e-06, 3.3691526e-07, 1)
+light_energy = 0.0
+shadow_enabled = true
+omni_range = 5.4683547
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AssemblyRoom" unique_id=219617607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4491414)
+stream = ExtResource("16_vxglm")
+
+[node name="Area3D2" type="Area3D" parent="." unique_id=1247438073]
+script = ExtResource("10_choun")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=118831594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5625, 1.3660583, 1.4605103)
+shape = SubResource("BoxShape3D_ya4ey")
+
+[node name="WindowSightingArea" type="Area3D" parent="." unique_id=391808225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.4041824)
+script = ExtResource("16_jbj1t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WindowSightingArea" unique_id=1656933848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3961792, 1.2510376, 0.87134266)
+shape = SubResource("BoxShape3D_muem4")
+
+[node name="WindowSpot" type="Node3D" parent="." unique_id=1997239551]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.336862, 0.8937081, 10.71914)
+
+[node name="FinaleSequence" type="Node" parent="." unique_id=116737274 node_paths=PackedStringArray("window_spot", "black_room_spawn", "desk_figure_stand_spot", "ending_music", "sit_sound", "big_screen", "big_screen_mesh", "voice_line")]
+script = ExtResource("17_muem4")
+window_spot = NodePath("../WindowSpot")
+figure_scene = ExtResource("18_dp3eg")
+black_room_spawn = NodePath("../BlackRoom/Marker3D")
+desk_figure_stand_spot = NodePath("../Marker3D")
+ending_music = NodePath("../BlackRoom/AudioStreamPlayer")
+sit_sound = NodePath("../BlackRoom/AudioStreamPlayer3D")
+big_screen = NodePath("../BlackRoom/BigScreen")
+big_screen_mesh = NodePath("../BlackRoom/BigScreen/BigScreen")
+voice_line = NodePath("../BlackRoom/VoiceLine")
+
+[node name="BlackRoom" type="Node3D" parent="." unique_id=96811009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -100, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BlackRoom" unique_id=1213842326]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011933804, 0, 0.016217709)
+mesh = SubResource("BoxMesh_2f3dj")
+
+[node name="Marker3D" type="Marker3D" parent="BlackRoom" unique_id=1122101051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.0111618, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BlackRoom" unique_id=882549896]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BlackRoom/StaticBody3D" unique_id=1417762540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12854004, -5.099365, 0.1353302)
+shape = SubResource("BoxShape3D_yq6so")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BlackRoom/StaticBody3D" unique_id=1955847755]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26348877, -0.43856812, -9.816772)
+shape = SubResource("BoxShape3D_so6io")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="BlackRoom/StaticBody3D" unique_id=956764601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26348877, -0.43856812, 9.943937)
+shape = SubResource("BoxShape3D_so6io")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="BlackRoom/StaticBody3D" unique_id=1847856434]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.19777, -0.43856812, 0.13360405)
+shape = SubResource("BoxShape3D_so6io")
+
+[node name="FloatingIcons" type="Node3D" parent="BlackRoom" unique_id=285347773]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BlackRoom/FloatingIcons" unique_id=230426099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.109657, -3.4659195, 7.280836)
+mesh = SubResource("QuadMesh_fuf3a")
+script = ExtResource("20_y6deb")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="BlackRoom/FloatingIcons" unique_id=1621896894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.727848, -3.6014404, -7.596283)
+mesh = SubResource("QuadMesh_c6pm6")
+script = ExtResource("20_y6deb")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="BlackRoom/FloatingIcons" unique_id=923458349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.727848, -2.4773788, 2.4495068)
+mesh = SubResource("QuadMesh_5poiv")
+script = ExtResource("20_y6deb")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="BlackRoom/FloatingIcons" unique_id=1308580819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0968552, 1.5200043, 0.46811724)
+mesh = SubResource("QuadMesh_chjal")
+script = ExtResource("20_y6deb")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="BlackRoom/FloatingIcons" unique_id=957786738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0880718, -2.4773788, 6.8781047)
+mesh = SubResource("QuadMesh_vchkt")
+script = ExtResource("20_y6deb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="BlackRoom/FloatingIcons" unique_id=880009656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.764361, -0.5817566, -6.4387836)
+mesh = SubResource("QuadMesh_tel4y")
+script = ExtResource("20_y6deb")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="BlackRoom/FloatingIcons" unique_id=1632945135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1278722, -1.4189224, -5.5423174)
+mesh = SubResource("QuadMesh_qkpxi")
+script = ExtResource("20_y6deb")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="BlackRoom/FloatingIcons" unique_id=193231705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4189224, 6.9844275)
+mesh = SubResource("QuadMesh_5q0nq")
+script = ExtResource("20_y6deb")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="BlackRoom/FloatingIcons" unique_id=740500690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5132, -1.4189224, 5.7449756)
+mesh = SubResource("QuadMesh_dgi5k")
+script = ExtResource("20_y6deb")
+
+[node name="ScreenViewport" type="SubViewport" parent="BlackRoom" unique_id=1011982403]
+size = Vector2i(640, 480)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="BlackRoom/ScreenViewport" unique_id=1264188572]
+transform = Transform3D(0.062432267, 0, 0.9980492, 0, 1, 0, -0.9980492, 0, 0.062432267, 3.265937, 1.4432995, 6.548458)
+current = true
+fov = 48.2
+near = 0.575
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BlackRoom" unique_id=2102424359]
+stream = ExtResource("25_og1vs")
+volume_db = -6.9
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="BlackRoom" unique_id=669399983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.225721, -3.0994492, 0)
+stream = ExtResource("26_2wyq8")
+
+[node name="BigScreen" type="StaticBody3D" parent="BlackRoom" unique_id=1652365014]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.222406, -1.0776672, 0)
+
+[node name="BigScreen" type="MeshInstance3D" parent="BlackRoom/BigScreen" unique_id=1207265167 node_paths=PackedStringArray("scr_vp")]
+mesh = SubResource("QuadMesh_kmb1v")
+script = ExtResource("24_y6deb")
+scr_vp = NodePath("../../ScreenViewport")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BlackRoom/BigScreen" unique_id=1599825030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.084198, 0.87776184, 0)
+shape = SubResource("BoxShape3D_w8sno")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="BlackRoom/BigScreen" unique_id=71580968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20101218, 0.57457733, 1.0772095)
+light_color = Color(0.4509804, 1, 1, 1)
+omni_range = 6.166096
+
+[node name="VoiceLine" type="AudioStreamPlayer" parent="BlackRoom" unique_id=1271661966]
+stream = ExtResource("32_qkpxi")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="BlackRoom" unique_id=92237144]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BlackRoom/StaticBody3D2" unique_id=798971198]
+shape = SubResource("BoxShape3D_3v8a5")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=5589055]
+transform = Transform3D(0.69868165, -0.00021040117, -0.7154327, -1.860923e-05, 0.99999994, -0.00031226286, 0.71543276, 0.00023148596, 0.6986816, 2.161015, 0.9965953, 7.0446186)

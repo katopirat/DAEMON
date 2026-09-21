@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://ddsxf03kmef1"]
+
+[ext_resource type="Script" uid="uid://o2w6q75pb88g" path="res://scenes/computer/message_row.gd" id="1_vfap4"]
+[ext_resource type="Texture2D" uid="uid://bwyy1p7tgm5x" path="res://assets/jake.jpeg" id="2_lcb3e"]
+
+[node name="MessageRow" type="HBoxContainer" unique_id=311832516]
+offset_right = 109.0
+offset_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_vfap4")
+
+[node name="Avatar" type="TextureRect" parent="." unique_id=287534418]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_lcb3e")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Content" type="VBoxContainer" parent="." unique_id=1895490297]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="HBoxContainer" parent="Content" unique_id=1889488286]
+layout_mode = 2
+
+[node name="Username" type="Label" parent="Content/Header" unique_id=1835973892]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "peter"
+
+[node name="Timestamp" type="Label" parent="Content/Header" unique_id=1250241468]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23753911, 0.23753914, 0.23753911, 1)
+theme_override_font_sizes/font_size = 10
+text = "138"
+
+[node name="MessageText" type="RichTextLabel" parent="Content" unique_id=857902508]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "text"
+fit_content = true
+
+[node name="ImageContent" type="TextureRect" parent="Content" unique_id=631823501]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+stretch_mode = 4

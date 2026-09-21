@@ -1,0 +1,22 @@
+[gd_resource type="Shader" format=3 uid="uid://bqo0w135gcf3e"]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform float curve_amount : hint_range(0.0, 0.3) = 0.08;
+uniform float vignette_strength : hint_range(0.0, 2.0) = 0.4;
+
+void fragment() {
+	vec2 uv = UV * 2.0 - 1.0;
+	vec2 offset = uv.yx * uv.yx * curve_amount;
+	uv += uv * offset;
+	uv = uv * 0.5 + 0.5;
+
+	if (uv.x < 0.0 || uv.x > 1.0 || uv.y < 0.0 || uv.y > 1.0) {
+		COLOR = vec4(0.0, 0.0, 0.0, 1.0);
+	} else {
+		COLOR = texture(TEXTURE, uv);
+		float dist = length(UV - 0.5);
+		COLOR.rgb *= 1.0 - dist * vignette_strength;
+	}
+}"

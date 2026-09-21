@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://d4a40u8opb3cn"]
+
+[ext_resource type="Script" uid="uid://0gy46mrehoct" path="res://credits.gd" id="1_0bpdh"]
+[ext_resource type="Theme" uid="uid://cdenboeetw58a" path="res://retro_theme.tres" id="2_2ckv8"]
+
+[node name="Control" type="Control" unique_id=218355640]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0bpdh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=590784637]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15127608, 0.15127608, 0.15127608, 1)
+
+[node name="CreditsScroll" type="ScrollContainer" parent="." unique_id=432031036]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsScroll" unique_id=102212536]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "
+
+
+
+
+[center][color=#ffffff]DAEMON[/color][/center]
+
+Made in Godot 4 for Hack Club [color=#ec3750]Stardance[/color]
+made by [color=#ff8c00]Katopirat[/color]
+
+--- ASSETS ---
+
+Windows 95 Icon Pack — aconfuseddragon (itch.io)
+Retro Windows GUI — Comp-3 Interactive (itch.io)
+[color=#ffcc66]House Interior PSX Assets — McPato (itch.io)[/color]
+PSX Gothic Furniture Kit — mcsteeg (itch.io)
+PSX Style Shader — expressobits (GitHub)
+Input Prompt Icons — Kenney (kenney.nl)
+Fonts: VT323, Press Start 2P — Google Fonts
+Jake's profile picture — AI-generated (Nano Banana)
+
+
+--- SOUND ---
+
+Interface Sounds, UI Audio — Kenney (kenney.nl)
+Footsteps Mini Sound Pack — MGW Sound Design (itch.io)
+Ending music: \"Dreamtime Healing (Yawuru Gurrjin)\" from Darkeyes Ambient — robcaw (itch.io)
+3D printer, camera shutter, chair creak, and other SFX — Pixabay
+
+--- 3D MODELS ---
+
+Low-poly props — Poly Pizza / 3dmodelscc0 (itch.io)
+Character model — Meshy AI
+
+--- VOICE ---
+
+Voice generated with ElevenLabs
+
+--- THANKS ---
+
+[color=#66ccff]my brother, for testing this game way too many times[/color]
+
+
+
+
+
+
+
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1631882678]
+layout_mode = 0
+offset_left = 1021.0
+offset_top = 607.0
+offset_right = 1136.0
+offset_bottom = 638.0
+theme = ExtResource("2_2ckv8")
+text = "Back to menu"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3e6ebafdqmqo"
+path="res://.godot/imported/ElevenLabs_2026-09-21T09_17_36_Jake 2_gen_sp80_s50_sb75_se0_b_m2.mp3-036e524da8e836ccb2f25985ac56cb03.mp3str"
+
+[deps]
+
+source_file="res://audio/ElevenLabs_2026-09-21T09_17_36_Jake 2_gen_sp80_s50_sb75_se0_b_m2.mp3"
+dest_files=["res://.godot/imported/ElevenLabs_2026-09-21T09_17_36_Jake 2_gen_sp80_s50_sb75_se0_b_m2.mp3-036e524da8e836ccb2f25985ac56cb03.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

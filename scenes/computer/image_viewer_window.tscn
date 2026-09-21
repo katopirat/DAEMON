@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dm1e3wq3xnjj8"]
+
+[ext_resource type="PackedScene" uid="uid://bis8dmpgwpjl" path="res://scenes/computer/app_window.tscn" id="1_bmojl"]
+[ext_resource type="Script" uid="uid://1grj6mirfu35" path="res://scenes/computer/image_viewer_window.gd" id="2_c55ha"]
+[ext_resource type="Texture2D" uid="uid://cxylyo7plgx3k" path="res://assets/icons/icons_32x32 (1)/image_editor.png" id="3_ee16w"]
+
+[node name="AppWindow" unique_id=687609960 instance=ExtResource("1_bmojl")]
+custom_minimum_size = Vector2(422.4, 288)
+offset_right = 320.0
+offset_bottom = 240.0
+script = ExtResource("2_c55ha")
+window_icon = ExtResource("3_ee16w")
+
+[node name="Label" parent="TitleBar" parent_id_path=PackedInt32Array(1510801857) index="0" unique_id=773440840]
+text = "Image viewer"
+
+[node name="MarginContainer" parent="." index="1" unique_id=661532062]
+offset_right = -5.0
+
+[node name="ImageRect" type="TextureRect" parent="MarginContainer" index="0" unique_id=1026618912]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5

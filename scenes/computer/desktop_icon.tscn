@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bckldfsrgwjqa"]
+
+[ext_resource type="Script" uid="uid://dhp4b6xrn0kk0" path="res://scripts/desktop_icon.gd" id="1_gliby"]
+[ext_resource type="Texture2D" uid="uid://dlf41pyv1e1vx" path="res://assets/icons/program.png" id="2_gyodu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b8y1s"]
+bg_color = Color(0.9238505, 0.31104475, 0.1668638, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="DesktopIcon" type="Button" unique_id=738559587]
+custom_minimum_size = Vector2(72, 88)
+flat = true
+script = ExtResource("1_gliby")
+
+[node name="Content" type="VBoxContainer" parent="." unique_id=1845468400]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Icon" type="TextureRect" parent="Content" unique_id=1986021901]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_gyodu")
+stretch_mode = 5
+
+[node name="Caption" type="Label" parent="Content" unique_id=932885816]
+custom_minimum_size = Vector2(70, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 16
+text = "Icon"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="NotificationDot" type="Panel" parent="." unique_id=1616002503]
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = -2.0
+offset_right = 18.0
+offset_bottom = 10.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b8y1s")

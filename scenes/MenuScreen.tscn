@@ -1,0 +1,214 @@
+[gd_scene format=3 uid="uid://cnp6evqyohldl"]
+
+[ext_resource type="Theme" uid="uid://cdenboeetw58a" path="res://retro_theme.tres" id="1_eeil4"]
+[ext_resource type="Script" uid="uid://bnj6fkhym3iaf" path="res://scenes/menu_screen.gd" id="2_1lk3f"]
+[ext_resource type="FontFile" uid="uid://b6itvps0vyag2" path="res://assets/VT323-Regular.ttf" id="3_kxjmc"]
+[ext_resource type="Texture2D" uid="uid://cx1ifkcm2qqm3" path="res://assets/logo.jpeg" id="4_kxjmc"]
+[ext_resource type="Texture2D" uid="uid://bw48023b2iyyr" path="res://icon.svg" id="5_tp11t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8sno"]
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="MenuScreen" type="Control" unique_id=1761832143]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_eeil4")
+script = ExtResource("2_1lk3f")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1288033750]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14767182, 0.14767179, 0.14767179, 1)
+
+[node name="MenuButtons" type="VBoxContainer" parent="." unique_id=477721597]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -38.5
+offset_right = 120.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="MenuButtons" unique_id=565708229]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_kxjmc")
+theme_override_font_sizes/font_size = 100
+text = "DAEMON"
+horizontal_alignment = 1
+
+[node name="NewGameButton" type="Button" parent="MenuButtons" unique_id=1007429863]
+unique_name_in_owner = true
+layout_mode = 2
+text = "New Game"
+
+[node name="SettingsButton" type="Button" parent="MenuButtons" unique_id=181927127]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Settings"
+
+[node name="CreditsButton" type="Button" parent="MenuButtons" unique_id=1283865129]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="MenuButtons" unique_id=1182068590]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+
+[node name="SettingsBox" type="VBoxContainer" parent="." unique_id=1724279242]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -38.5
+offset_right = 120.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsBox" unique_id=1529496512]
+layout_mode = 2
+
+[node name="Volume" type="Label" parent="SettingsBox/HBoxContainer" unique_id=33379582]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Volume"
+
+[node name="VolumeSlider" type="HSlider" parent="SettingsBox/HBoxContainer" unique_id=167019111]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("1_eeil4")
+max_value = 1.0
+step = 0.05
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SettingsBox" unique_id=842760470]
+layout_mode = 2
+
+[node name="Sensitivity" type="Label" parent="SettingsBox/HBoxContainer2" unique_id=761015931]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Sensitivity"
+
+[node name="SensitivitySlider" type="HSlider" parent="SettingsBox/HBoxContainer2" unique_id=2020353045]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+min_value = 0.3
+max_value = 2.0
+step = 0.05
+value = 0.3
+
+[node name="SettingsBackButton" type="Button" parent="SettingsBox" unique_id=660545047]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back"
+
+[node name="ThanksBox" type="VBoxContainer" parent="." unique_id=1656724814]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -38.5
+offset_right = 120.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ThanksBox" unique_id=1939932863]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_kxjmc")
+theme_override_font_sizes/font_size = 50
+text = "Thanks for playing :)"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ThanksBox" unique_id=992259974]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_kxjmc")
+theme_override_font_sizes/font_size = 20
+text = "press any key to return to menu"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1493758410]
+clip_children = 1
+layout_mode = 0
+offset_left = 23.000038
+offset_top = 280.0
+offset_right = 43.000046
+offset_bottom = 300.0
+scale = Vector2(3.2799942, 3.2799942)
+theme_override_styles/panel = SubResource("StyleBoxFlat_w8sno")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=1986323334]
+layout_mode = 2
+texture = ExtResource("4_kxjmc")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="." unique_id=1338319033]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 343.0001
+offset_right = 172.0
+offset_bottom = 366.0001
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_kxjmc")
+theme_override_font_sizes/font_size = 22
+text = "Made by Katopirat"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1007319550]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 280.0
+offset_right = 692.0
+offset_bottom = 363.0
+scale = Vector2(0.78762555, 0.78762555)
+texture = ExtResource("5_tp11t")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Label2" type="Label" parent="." unique_id=1311980403]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 343.0
+offset_right = 674.0
+offset_bottom = 366.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_kxjmc")
+theme_override_font_sizes/font_size = 22
+text = "Made with Godot"
+horizontal_alignment = 2

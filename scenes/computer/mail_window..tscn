@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cx4s4oli1hyea"]
+
+[ext_resource type="PackedScene" uid="uid://bis8dmpgwpjl" path="res://scenes/computer/app_window.tscn" id="1_0fyod"]
+[ext_resource type="Script" uid="uid://0eismpladvtx" path="res://scenes/computer/mail_window..gd" id="2_4be8a"]
+[ext_resource type="Texture2D" uid="uid://l1duqdg4pim2" path="res://assets/icons/mail.png" id="3_3bt1s"]
+[ext_resource type="Theme" uid="uid://gei7cfdk5kkp" path="res://retro_theme2.tres" id="3_4be8a"]
+[ext_resource type="Texture2D" uid="uid://dl8rph4ht7srb" path="res://assets/icons/folder_closed.png" id="3_ehcdn"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jitwi"]
+diffuse_texture = ExtResource("3_ehcdn")
+
+[node name="MailWindow" unique_id=687609960 instance=ExtResource("1_0fyod")]
+custom_minimum_size = Vector2(480, 360)
+offset_right = 320.0
+offset_bottom = 240.0
+script = ExtResource("2_4be8a")
+icon_folder = SubResource("CanvasTexture_jitwi")
+window_icon = ExtResource("3_3bt1s")
+
+[node name="Label" parent="TitleBar" parent_id_path=PackedInt32Array(1510801857) index="0" unique_id=773440840]
+text = "Mail"
+
+[node name="MainSplit" type="HSplitContainer" parent="MarginContainer" parent_id_path=PackedInt32Array(661532062) index="0" unique_id=2036650194]
+layout_mode = 2
+
+[node name="FolderPanel" type="PanelContainer" parent="MarginContainer/MainSplit" index="0" unique_id=1780730205]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="FolderList" type="ItemList" parent="MarginContainer/MainSplit/FolderPanel" index="0" unique_id=750580494]
+unique_name_in_owner = true
+layout_mode = 2
+fixed_icon_size = Vector2i(16, 16)
+
+[node name="RightSplit" type="VSplitContainer" parent="MarginContainer/MainSplit" index="1" unique_id=1681017334]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/MainSplit/RightSplit" index="0" unique_id=922690515]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="MailTree" type="Tree" parent="MarginContainer/MainSplit/RightSplit/PanelContainer" index="0" unique_id=1615393727]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/title_button_font_size = 10
+
+[node name="ReaderPanel" type="PanelContainer" parent="MarginContainer/MainSplit/RightSplit" index="1" unique_id=1557774297]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MainSplit/RightSplit/ReaderPanel" index="0" unique_id=1220084415]
+layout_mode = 2
+
+[node name="HeaderPanel" type="PanelContainer" parent="MarginContainer/MainSplit/RightSplit/ReaderPanel/VBoxContainer" index="0" unique_id=996463733]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MainSplit/RightSplit/ReaderPanel/VBoxContainer/HeaderPanel" index="0" unique_id=700099684]
+layout_mode = 2
+
+[node name="FromLabel" type="Label" parent="MarginContainer/MainSplit/RightSplit/ReaderPanel/VBoxContainer/HeaderPanel/VBoxContainer" index="0" unique_id=936372335]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+autowrap_mode = 3
+
+[node name="SubjectLabel" type="Label" parent="MarginContainer/MainSplit/RightSplit/ReaderPanel/VBoxContainer/HeaderPanel/VBoxContainer" index="1" unique_id=640510929]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+autowrap_mode = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/MainSplit/RightSplit/ReaderPanel/VBoxContainer" index="1" unique_id=1341956947]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_4be8a")
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MainSplit/RightSplit/ReaderPanel/VBoxContainer/ScrollContainer" index="0" unique_id=1825979153]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="BodyLabel" type="Label" parent="MarginContainer/MainSplit/RightSplit/ReaderPanel/VBoxContainer/ScrollContainer/MarginContainer" index="0" unique_id=2104984543]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+autowrap_mode = 3

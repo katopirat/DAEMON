@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://d04osxgv1dcrr"]
+
+[ext_resource type="PackedScene" uid="uid://bis8dmpgwpjl" path="res://scenes/computer/app_window.tscn" id="1_gcnv2"]
+[ext_resource type="Script" uid="uid://pd0vudaxxji8" path="res://scenes/computer/chat_window.gd" id="2_q6j88"]
+[ext_resource type="Texture2D" uid="uid://isrrskyps8vu" path="res://assets/icons/discord.png" id="3_c0hmg"]
+[ext_resource type="Texture2D" uid="uid://bwyy1p7tgm5x" path="res://assets/jake.jpeg" id="3_fkdkc"]
+[ext_resource type="Texture2D" uid="uid://os2qwcew5qat" path="res://assets/b2eaa0d4918d54021f9c7aa3fc3d3cf3.jpg" id="4_tnudb"]
+[ext_resource type="Theme" uid="uid://cdenboeetw58a" path="res://retro_theme.tres" id="5_st2i6"]
+[ext_resource type="Theme" uid="uid://gei7cfdk5kkp" path="res://retro_theme2.tres" id="7_yi6gr"]
+[ext_resource type="Texture2D" uid="uid://ddh45tjtkc3mi" path="res://assets/icons/paperclip-icon.png" id="8_pkjju"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pkjju"]
+load_path = "res://.godot/imported/jake.jpeg-6236fcd02185e20d2638e4d231374c0a.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjpbu"]
+bg_color = Color(0.049806282, 0.6140131, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="ChatWindow" unique_id=687609960 instance=ExtResource("1_gcnv2")]
+custom_minimum_size = Vector2(528, 360)
+offset_right = 480.0
+offset_bottom = 360.0
+script = ExtResource("2_q6j88")
+av_jake = ExtResource("3_fkdkc")
+av_pl = ExtResource("4_tnudb")
+n_jake = "jake"
+n_pl = "you"
+c_jake = Color(0.85, 0.45, 0.45, 1)
+c_pl = Color(0.45, 0.65, 0.95, 1)
+window_icon = ExtResource("3_c0hmg")
+
+[node name="Label" parent="TitleBar" parent_id_path=PackedInt32Array(1510801857) index="0" unique_id=773440840]
+text = "THISCORD"
+
+[node name="MarginContainer" parent="." index="1" unique_id=661532062]
+offset_left = 2.0
+offset_top = 29.0
+offset_right = -5.0
+offset_bottom = -14.0
+
+[node name="MainLayout" type="HBoxContainer" parent="MarginContainer" index="0" unique_id=1812535137]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/MainLayout" index="0" unique_id=1828573093]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme = ExtResource("5_st2i6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MainLayout/PanelContainer" index="0" unique_id=1194692243]
+layout_mode = 2
+theme = ExtResource("5_st2i6")
+
+[node name="Label" type="Label" parent="MarginContainer/MainLayout/PanelContainer/VBoxContainer" index="0" unique_id=65286117]
+layout_mode = 2
+text = "DMs"
+
+[node name="ContactList" type="VBoxContainer" parent="MarginContainer/MainLayout/PanelContainer/VBoxContainer" index="1" unique_id=2108311615]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MainLayout/PanelContainer/VBoxContainer/ContactList" index="0" unique_id=1010310468]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_pkjju")
+expand_mode = 4
+
+[node name="NotificationDot" type="Panel" parent="MarginContainer/MainLayout/PanelContainer/VBoxContainer/ContactList/TextureRect" index="0" unique_id=925996802]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 26.0
+offset_right = 38.0
+offset_bottom = 38.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wjpbu")
+
+[node name="ChatArea" type="VBoxContainer" parent="MarginContainer/MainLayout" index="1" unique_id=493472173]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ChannelHeader" type="PanelContainer" parent="MarginContainer/MainLayout/ChatArea" index="0" unique_id=1267733913]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("5_st2i6")
+
+[node name="ChannelName" type="Label" parent="MarginContainer/MainLayout/ChatArea/ChannelHeader" index="0" unique_id=1650240033]
+unique_name_in_owner = true
+layout_mode = 2
+text = "@jake"
+
+[node name="MessageScroll" type="ScrollContainer" parent="MarginContainer/MainLayout/ChatArea" index="1" unique_id=273106826]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("7_yi6gr")
+
+[node name="MessageList" type="VBoxContainer" parent="MarginContainer/MainLayout/ChatArea/MessageScroll" index="0" unique_id=1189421648]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InputBar" type="PanelContainer" parent="MarginContainer/MainLayout/ChatArea" index="2" unique_id=624607769]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MainLayout/ChatArea/InputBar" index="0" unique_id=1782580490]
+layout_mode = 2
+
+[node name="AttachButton" type="Button" parent="MarginContainer/MainLayout/ChatArea/InputBar/HBoxContainer" index="0" unique_id=1395189124]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Atach file"
+icon = ExtResource("8_pkjju")
+flat = true
+icon_alignment = 2
+expand_icon = true
+
+[node name="ResponseArea" type="VBoxContainer" parent="MarginContainer/MainLayout/ChatArea/InputBar/HBoxContainer" index="1" unique_id=412043323]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3

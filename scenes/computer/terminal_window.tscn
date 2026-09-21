@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://b1hl13ffuujoj"]
+
+[ext_resource type="PackedScene" uid="uid://bis8dmpgwpjl" path="res://scenes/computer/app_window.tscn" id="1_0c1uv"]
+[ext_resource type="Script" uid="uid://duhhdoho5amv" path="res://terminal.gd" id="2_qy8sp"]
+[ext_resource type="FontFile" uid="uid://b6itvps0vyag2" path="res://assets/VT323-Regular.ttf" id="3_3vuwl"]
+[ext_resource type="Texture2D" uid="uid://dlf41pyv1e1vx" path="res://assets/icons/program.png" id="3_qy8sp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qy8sp"]
+content_margin_top = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w2uev"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0c1uv"]
+
+[node name="AppWindow" unique_id=687609960 instance=ExtResource("1_0c1uv")]
+script = ExtResource("2_qy8sp")
+window_icon = ExtResource("3_qy8sp")
+
+[node name="Label" parent="TitleBar" parent_id_path=PackedInt32Array(1510801857) index="0" unique_id=773440840]
+text = "Terminal"
+
+[node name="ColorRect" type="ColorRect" parent="." index="1" unique_id=469684464]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 28.0
+offset_right = 316.0
+offset_bottom = 225.0
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" parent="." index="2" unique_id=661532062]
+offset_left = 5.0
+offset_right = -6.0
+
+[node name="Layout" type="VBoxContainer" parent="MarginContainer" index="0" unique_id=773676206]
+layout_mode = 2
+
+[node name="OutputScroll" type="ScrollContainer" parent="MarginContainer/Layout" index="0" unique_id=263623664]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Layout/OutputScroll" index="0" unique_id=1255041017]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="OutputLabel" type="RichTextLabel" parent="MarginContainer/Layout/OutputScroll/VBoxContainer" index="0" unique_id=1665498401]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("3_3vuwl")
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "aaaa"
+fit_content = true
+scroll_active = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Layout/OutputScroll/VBoxContainer" index="1" unique_id=874662281]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="InputRow" type="Label" parent="MarginContainer/Layout/OutputScroll/VBoxContainer/HBoxContainer" index="0" unique_id=323104594]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_3vuwl")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxTexture_qy8sp")
+text = ">"
+
+[node name="InputText" type="TextEdit" parent="MarginContainer/Layout/OutputScroll/VBoxContainer/HBoxContainer" index="1" unique_id=580612163]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/caret_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_fonts/font = ExtResource("3_3vuwl")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxTexture_w2uev")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0c1uv")
+text = "aa>"
+caret_blink = true
+caret_blink_interval = 0.5

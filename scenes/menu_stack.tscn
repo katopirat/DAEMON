@@ -1,0 +1,182 @@
+[gd_scene format=3 uid="uid://e8anrdoc3yot"]
+
+[ext_resource type="Material" uid="uid://b6irksunrvdek" path="res://post_process/blur-post-process_mat.tres" id="1_v0k5u"]
+[ext_resource type="Material" uid="uid://bni0eo5gi5ho4" path="res://post_process/lcd-overlay_mat.tres" id="2_yk6wq"]
+[ext_resource type="Shader" uid="uid://dj8l8t2o6wcup" path="res://shaders/pp_band-dither.gdshader" id="3_jgjmv"]
+[ext_resource type="Texture2D" uid="uid://b0ub3tqjyw46f" path="res://shaders/psxdither.png" id="4_1hh2y"]
+[ext_resource type="PackedScene" uid="uid://blyvpmbeb4t77" path="res://scenes/dori_home.tscn" id="5_8o40u"]
+[ext_resource type="Script" uid="uid://d1ohy3v7yb7vm" path="res://post_process/input_relay.gd" id="6_0ixm2"]
+[ext_resource type="AudioStream" uid="uid://b2l03qnhx1ot8" path="res://audio/darkness/dk-theroom.wav" id="7_j0vrl"]
+[ext_resource type="Shader" uid="uid://bqo0w135gcf3e" path="res://shaders/crt_curve.tres" id="9_8o40u"]
+[ext_resource type="PackedScene" uid="uid://cnp6evqyohldl" path="res://scenes/MenuScreen.tscn" id="9_frq7g"]
+[ext_resource type="FontFile" uid="uid://ud2s6vlhsdh1" path="res://assets/PressStart2P-Regular.ttf" id="10_8o40u"]
+[ext_resource type="Script" uid="uid://dabt0mlmcepg5" path="res://scenes/fade_layer.gd" id="10_vwmke"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m5nvn"]
+shader = ExtResource("3_jgjmv")
+shader_parameter/dither_tex = ExtResource("4_1hh2y")
+shader_parameter/col_depth = 15.0
+shader_parameter/dither_banding = true
+
+[sub_resource type="Environment" id="Environment_jyhfs"]
+background_mode = 1
+background_color = Color(0.039215688, 0.039215688, 0.078431375, 1)
+background_energy_multiplier = 0.3
+ambient_light_source = 2
+ambient_light_color = Color(0.8646751, 0.86467516, 0.8646751, 1)
+ambient_light_energy = 0.01
+glow_enabled = true
+glow_intensity = 8.0
+glow_strength = 0.6
+glow_mix = 0.695
+glow_blend_mode = 0
+adjustment_enabled = true
+adjustment_brightness = 0.62
+adjustment_contrast = 1.125
+adjustment_saturation = 0.46
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vwmke"]
+shader = ExtResource("9_8o40u")
+shader_parameter/curve_amount = 0.0510000024225
+shader_parameter/vignette_strength = 0.4
+
+[node name="Node" type="Node" unique_id=745577084]
+
+[node name="PSXLayer" type="CanvasLayer" parent="." unique_id=1913789944]
+layer = 0
+
+[node name="BlurPostProcess" type="SubViewportContainer" parent="PSXLayer" unique_id=355320376]
+material = ExtResource("1_v0k5u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+stretch = true
+
+[node name="Viewport" type="SubViewport" parent="PSXLayer/BlurPostProcess" unique_id=479150354]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="LCDOverlay" type="SubViewportContainer" parent="PSXLayer/BlurPostProcess/Viewport" unique_id=1869041558]
+material = ExtResource("2_yk6wq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+stretch = true
+
+[node name="Viewport" type="SubViewport" parent="PSXLayer/BlurPostProcess/Viewport/LCDOverlay" unique_id=277626120]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="DitherBanding" type="SubViewportContainer" parent="PSXLayer/BlurPostProcess/Viewport/LCDOverlay/Viewport" unique_id=222172565]
+material = SubResource("ShaderMaterial_m5nvn")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+stretch_shrink = 3
+
+[node name="Viewport" type="SubViewport" parent="PSXLayer/BlurPostProcess/Viewport/LCDOverlay/Viewport/DitherBanding" unique_id=156757341]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+size = Vector2i(384, 216)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="PSXLayer/BlurPostProcess/Viewport/LCDOverlay/Viewport/DitherBanding/Viewport" unique_id=1160689446]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="PSXLayer/BlurPostProcess/Viewport/LCDOverlay/Viewport/DitherBanding/Viewport/Node3D" unique_id=2106575912]
+environment = SubResource("Environment_jyhfs")
+
+[node name="Dori_home" parent="PSXLayer/BlurPostProcess/Viewport/LCDOverlay/Viewport/DitherBanding/Viewport/Node3D" unique_id=2146266786 instance=ExtResource("5_8o40u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74736404, 0.047625057, 7.221334)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="PSXLayer/BlurPostProcess/Viewport/LCDOverlay/Viewport/DitherBanding/Viewport/Node3D" unique_id=834002145]
+stream = ExtResource("7_j0vrl")
+volume_db = -15.0
+autoplay = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="PSXLayer/BlurPostProcess/Viewport/LCDOverlay/Viewport/DitherBanding/Viewport/Node3D" unique_id=2017316009]
+transform = Transform3D(-0.095653795, 0.8132024, -0.57406646, -0.5804482, 0.42294338, 0.69584394, 0.8086595, 0.399776, 0.43156573, 1.9966279, 2.100594, 6.717335)
+spot_range = 11.883742
+spot_angle = 56.222122
+
+[node name="MenuCamera" type="Camera3D" parent="PSXLayer/BlurPostProcess/Viewport/LCDOverlay/Viewport/DitherBanding/Viewport/Node3D" unique_id=316754859]
+unique_name_in_owner = true
+transform = Transform3D(-0.04789098, -1.3380586e-10, -0.99885255, -0.010808416, 0.99994147, 0.00051822007, 0.99879414, 0.010820832, -0.04788817, 1.8421465, 1.3731558, 6.4433637)
+current = true
+fov = 34.541588
+
+[node name="InputRelay" type="Node" parent="." unique_id=334702025]
+script = ExtResource("6_0ixm2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=304532901]
+
+[node name="OSLayer" type="CanvasLayer" parent="." unique_id=536658637]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="OSLayer" unique_id=1279476691]
+material = SubResource("ShaderMaterial_vwmke")
+offset_left = 232.0
+offset_top = 144.0
+offset_right = 920.0
+offset_bottom = 528.0
+
+[node name="SubViewport" type="SubViewport" parent="OSLayer/SubViewportContainer" unique_id=1973441401]
+handle_input_locally = false
+size = Vector2i(690, 380)
+render_target_update_mode = 4
+
+[node name="Panel" type="Panel" parent="OSLayer/SubViewportContainer/SubViewport" unique_id=843943918]
+visible = false
+
+[node name="MenuScreen" parent="OSLayer/SubViewportContainer/SubViewport" unique_id=1761832143 node_paths=PackedStringArray("menu_camera") instance=ExtResource("9_frq7g")]
+anchors_preset = -1
+anchor_left = -0.001
+offset_left = 0.69000006
+offset_right = 6.0
+offset_bottom = 4.0
+menu_camera = NodePath("../../../../PSXLayer/BlurPostProcess/Viewport/LCDOverlay/Viewport/DitherBanding/Viewport/Node3D/MenuCamera")
+
+[node name="FadeLayer" type="CanvasLayer" parent="." unique_id=2094942589 groups=["fade_layer"]]
+layer = 100
+script = ExtResource("10_vwmke")
+
+[node name="FadeRect" type="ColorRect" parent="FadeLayer" unique_id=575681552]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="LoadingLabel" type="Label" parent="FadeLayer" unique_id=59368447]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("10_8o40u")
+theme_override_font_sizes/font_size = 35
+text = "NIGHT 2"

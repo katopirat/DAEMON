@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b7u3qjxjdoh2w"]
+
+[ext_resource type="Script" uid="uid://too3l6wickcp" path="res://scripts/horror_state.gd" id="1_tgbpe"]
+[ext_resource type="Texture2D" uid="uid://isrrskyps8vu" path="res://assets/icons/discord.png" id="2_d3o7h"]
+
+[node name="HorrorState" type="Node" unique_id=143987431]
+script = ExtResource("1_tgbpe")
+relay_icon = ExtResource("2_d3o7h")

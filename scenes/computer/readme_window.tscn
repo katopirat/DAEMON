@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://006j0e16mbmg"]
+
+[ext_resource type="PackedScene" uid="uid://bis8dmpgwpjl" path="res://scenes/computer/app_window.tscn" id="1_om7qe"]
+[ext_resource type="Script" uid="uid://yuf8ev574fkc" path="res://scenes/computer/readme_window.gd" id="2_c1jg4"]
+[ext_resource type="Texture2D" uid="uid://dcyv5sdds1e5o" path="res://assets/icons/icons_32x32 (1)/text_editor.png" id="3_ygpai"]
+
+[node name="ReadmeWindow" unique_id=687609960 instance=ExtResource("1_om7qe")]
+script = ExtResource("2_c1jg4")
+window_icon = ExtResource("3_ygpai")
+
+[node name="TitleLabel" type="Label" parent="TitleBar" parent_id_path=PackedInt32Array(1510801857) index="0" unique_id=773440840]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "readme.txt"
+
+[node name="MarginContainer" parent="." index="1" unique_id=661532062]
+offset_left = 8.0
+offset_top = 42.0
+offset_right = -8.0
+offset_bottom = -20.0
+
+[node name="Panel" type="Panel" parent="MarginContainer" index="0" unique_id=603134811]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" index="1" unique_id=2105778418]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer" index="0" unique_id=1167680010]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/HBoxContainer" index="0" unique_id=1870263246]
+layout_mode = 2
+
+[node name="ContentLabel" type="Label" parent="MarginContainer/ScrollContainer/HBoxContainer" index="1" unique_id=1609243962]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "hello there"
+autowrap_mode = 3

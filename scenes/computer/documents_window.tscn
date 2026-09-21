@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://suvy4ykmwtef"]
+
+[ext_resource type="PackedScene" uid="uid://bis8dmpgwpjl" path="res://scenes/computer/app_window.tscn" id="1_hs1ue"]
+[ext_resource type="Script" uid="uid://bxre4a860mwdf" path="res://scenes/computer/documents_window.gd" id="2_5tdky"]
+[ext_resource type="Texture2D" uid="uid://dl8rph4ht7srb" path="res://assets/icons/folder_closed.png" id="3_pkc47"]
+[ext_resource type="Texture2D" uid="uid://djqevj7h3m5e8" path="res://assets/icons/icons_32x32 (1)/text_file.png" id="4_7gsan"]
+[ext_resource type="Texture2D" uid="uid://b2e5mq1256ta5" path="res://assets/icons/icons_32x32 (1)/3d_graphics_file.png" id="5_i1d3d"]
+[ext_resource type="Texture2D" uid="uid://crxci5r3m1hja" path="res://assets/icons/icons_32x32 (1)/aseprite_file.png" id="6_7q3y4"]
+[ext_resource type="Theme" uid="uid://gei7cfdk5kkp" path="res://retro_theme2.tres" id="7_avqtn"]
+[ext_resource type="Texture2D" uid="uid://dc0pem6en5u7a" path="res://assets/icons/icons_32x32 (1)/image_file.png" id="7_i1d3d"]
+[ext_resource type="Texture2D" uid="uid://plel61hfp4vi" path="res://assets/ui/Windows_Progress_Fill.png" id="8_7gsan"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i1d3d"]
+texture = ExtResource("8_7gsan")
+
+[node name="AppWindow" unique_id=687609960 instance=ExtResource("1_hs1ue")]
+script = ExtResource("2_5tdky")
+icon_folder = ExtResource("3_pkc47")
+icon_txt = ExtResource("4_7gsan")
+icon_stl = ExtResource("5_i1d3d")
+icon_unknown = ExtResource("6_7q3y4")
+icon_image = ExtResource("7_i1d3d")
+window_icon = ExtResource("3_pkc47")
+
+[node name="Label" parent="TitleBar" parent_id_path=PackedInt32Array(1510801857) index="0" unique_id=773440840]
+text = "Files"
+
+[node name="MarginContainer" parent="." index="1" unique_id=661532062]
+offset_top = 30.0
+offset_right = -5.0
+offset_bottom = -17.0
+
+[node name="Layout" type="VBoxContainer" parent="MarginContainer" index="0" unique_id=68268071]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Toolbar" type="HBoxContainer" parent="MarginContainer/Layout" index="0" unique_id=946443915]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="UpButton" type="Button" parent="MarginContainer/Layout/Toolbar" index="0" unique_id=1168981256]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "up"
+
+[node name="PathEdit" type="LineEdit" parent="MarginContainer/Layout/Toolbar" index="1" unique_id=2126675002]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10
+placeholder_text = "path"
+
+[node name="FileList" type="ItemList" parent="MarginContainer/Layout" index="1" unique_id=174219802]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("7_avqtn")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/Layout" index="2" unique_id=1257231652]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_i1d3d")
+
+[node name="AttachBanner" type="Label" parent="MarginContainer/Layout/PanelContainer" index="0" unique_id=1383565024]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)

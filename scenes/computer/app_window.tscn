@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bis8dmpgwpjl"]
+
+[ext_resource type="Script" uid="uid://bqohryp680wed" path="res://scenes/computer/app_window.gd" id="1_2s7jb"]
+[ext_resource type="Texture2D" uid="uid://cs73byo5igadb" path="res://assets/ui/Window_Header_Resizable.png" id="1_tq2ie"]
+[ext_resource type="Texture2D" uid="uid://cudk5dosq5qp1" path="res://assets/ui/Windows_Icons.png" id="2_k2te5"]
+[ext_resource type="Texture2D" uid="uid://dykp5d667ul4v" path="res://assets/ui/Window_Header_Resizable_Inactive.png" id="3_7qoy7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7qoy7"]
+texture = ExtResource("1_tq2ie")
+texture_margin_left = 10.0
+texture_margin_top = 27.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_so0fl"]
+texture = ExtResource("1_tq2ie")
+texture_margin_left = 5.0
+texture_margin_top = 27.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8qh2j"]
+texture = ExtResource("3_7qoy7")
+texture_margin_left = 5.0
+texture_margin_top = 27.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2te5"]
+atlas = ExtResource("2_k2te5")
+region = Rect2(52.063118, 3.4445362, 8.047195, 8.00368)
+
+[node name="AppWindow" type="Panel" unique_id=687609960]
+custom_minimum_size = Vector2(320, 240)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7qoy7")
+script = ExtResource("1_2s7jb")
+active_style = SubResource("StyleBoxTexture_so0fl")
+inactive_style = SubResource("StyleBoxTexture_8qh2j")
+
+[node name="TitleBar" type="HBoxContainer" parent="." unique_id=1510801857]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 11.0
+offset_top = 6.0
+offset_right = -4.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="TitleBar" unique_id=773440840]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+
+[node name="CloseButton" type="Button" parent="TitleBar" unique_id=1495475051]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+icon = SubResource("AtlasTexture_k2te5")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=661532062]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 28.0
+offset_right = -4.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResizeHandle" type="Control" parent="." unique_id=222639864]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -13.0
+grow_horizontal = 0
+grow_vertical = 0

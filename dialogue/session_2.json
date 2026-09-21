@@ -1,0 +1,17 @@
+{
+  "start": { "from": "jake", "text": "yooo", "delay": 0.8, "next": "n2" },
+  "n2": { "from": "jake", "text": "you alive", "delay": 1.2, "next": "n3" },
+  "n3": {
+	"from": "jake",
+	"text": "ok so i need a favor",
+	"delay": 1.5,
+	"responses": [
+	  { "text": "go on", "next": "n4" },
+	  { "text": "depends", "next": "n4" }
+	]
+  },
+  "n4": { "from": "jake", "text": "[b]print one more thing for me.[/b] its important", "delay": 1.5, "next": "n5" },
+  "n5": { "from": "jake", "text": "[b]3d_models > jake > project_final.stl[/b]", "delay": 2.0, "next": "n6" },
+  "n6": { "from": "jake", "text": "dont ask about the other file", "delay": 2.5, "next": "wait_print_2" },
+  "wait_print_2": { "from": "jake", "text": "[b]just print mine.[/b] lmk when its done", "delay": 1.5 }
+}

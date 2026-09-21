@@ -1,0 +1,4 @@
+{
+  "start": { "from": "jake", "text": "printed ok?", "delay": 2.5, "next": "n" },
+  "n": { "from": "jake", "text": "I'll go in bed", "delay": 2, "on_end": "allow_sleep" }
+}

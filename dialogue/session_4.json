@@ -1,0 +1,14 @@
+{
+  "start": { "from": "jake", "text": "hey", "delay": 1.0, "next": "n2" },
+  "n2": {
+	"from": "jake",
+	"text": "how was your day",
+	"delay": 1.5,
+	"responses": [
+	  { "text": "weird actually. the printer started itself yesterday", "next": "n3" },
+	  { "text": "fine i guess", "next": "n4" }
+	]
+  },
+  "n3": { "from": "jake", "text": "huh. weird", "delay": 2.0 },
+  "n4": {"from": "jake", "text": "really?","delay": 1.0}
+}

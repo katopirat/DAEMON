@@ -1,0 +1,261 @@
+[gd_scene format=3 uid="uid://cs8d3xn2towo"]
+
+[ext_resource type="Material" uid="uid://b6irksunrvdek" path="res://post_process/blur-post-process_mat.tres" id="1_3emcg"]
+[ext_resource type="Material" uid="uid://bni0eo5gi5ho4" path="res://post_process/lcd-overlay_mat.tres" id="2_0v7s0"]
+[ext_resource type="Shader" uid="uid://dj8l8t2o6wcup" path="res://shaders/pp_band-dither.gdshader" id="3_rkbcs"]
+[ext_resource type="Texture2D" uid="uid://b0ub3tqjyw46f" path="res://shaders/psxdither.png" id="4_05ih0"]
+[ext_resource type="PackedScene" uid="uid://bve1auti275yp" path="res://scenes/main.tscn" id="5_l0ykp"]
+[ext_resource type="Script" uid="uid://d1ohy3v7yb7vm" path="res://post_process/input_relay.gd" id="6_vi03e"]
+[ext_resource type="Script" uid="uid://nbaoonkm4b12" path="res://post_process/control.gd" id="7_hqv46"]
+[ext_resource type="PackedScene" uid="uid://dlkekbk62dj5b" path="res://scenes/computer/desktop.tscn" id="8_uybk2"]
+[ext_resource type="Script" uid="uid://ctnvtd50ov456" path="res://post_process/canvas_layer_2.gd" id="9_6ddx4"]
+[ext_resource type="Texture2D" uid="uid://isrrskyps8vu" path="res://assets/icons/discord.png" id="10_xsd6h"]
+[ext_resource type="FontFile" uid="uid://ud2s6vlhsdh1" path="res://assets/PressStart2P-Regular.ttf" id="11_j7cdt"]
+[ext_resource type="Script" uid="uid://dvcekvi3d5y7c" path="res://post_process/intro_sequence.gd" id="12_lab5l"]
+[ext_resource type="Script" uid="uid://dabt0mlmcepg5" path="res://scenes/fade_layer.gd" id="12_pg6w4"]
+[ext_resource type="Script" uid="uid://bkoj47q20yyx1" path="res://post_process/photo_flash.gd" id="13_jsjaj"]
+[ext_resource type="AudioStream" uid="uid://jx2ehs2yxl6b" path="res://audio/kave_msri-camera-shutter-314056.mp3" id="14_4ndus"]
+[ext_resource type="Script" uid="uid://be1nuqu7hsohy" path="res://post_process/hint_layer.gd" id="14_hi27x"]
+[ext_resource type="Texture2D" uid="uid://dr8oyta77wek" path="res://assets/kenney_input-prompts_1.5/Keyboard & Mouse/Default/keyboard_e.png" id="15_ym66k"]
+[ext_resource type="Texture2D" uid="uid://f0cc0answmmm" path="res://assets/kenney_input-prompts_1.5/Keyboard & Mouse/Vector/mouse_right.svg" id="16_owc7f"]
+[ext_resource type="Texture2D" uid="uid://c3ys8wcw7wmpi" path="res://assets/kenney_input-prompts_1.5/Keyboard & Mouse/Default/keyboard_tab.png" id="17_4ndus"]
+[ext_resource type="Texture2D" uid="uid://cfjo3eepssajq" path="res://assets/kenney_input-prompts_1.5/Keyboard & Mouse/Default/keyboard_c.png" id="18_lsrei"]
+[ext_resource type="Texture2D" uid="uid://d2w41a32h6nld" path="res://assets/kenney_input-prompts_1.5/Keyboard & Mouse/Default/keyboard_escape.png" id="19_pg6w4"]
+[ext_resource type="Texture2D" uid="uid://mlv5h1bjej7u" path="res://assets/kenney_input-prompts_1.5/Keyboard & Mouse/Default/mouse_left.png" id="20_owc7f"]
+[ext_resource type="Script" uid="uid://b0s113k3lfj3c" path="res://post_process/DebugMode.gd" id="22_lsrei"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m5nvn"]
+shader = ExtResource("3_rkbcs")
+shader_parameter/dither_tex = ExtResource("4_05ih0")
+shader_parameter/col_depth = 15.0
+shader_parameter/dither_banding = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lab5l"]
+bg_color = Color(0.9238505, 0.31104475, 0.1668638, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Node" type="Node" unique_id=745577084]
+
+[node name="PSXLayer" type="CanvasLayer" parent="." unique_id=1913789944]
+layer = 0
+
+[node name="BlurPostProcess" type="SubViewportContainer" parent="PSXLayer" unique_id=355320376]
+material = ExtResource("1_3emcg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+stretch = true
+
+[node name="Viewport" type="SubViewport" parent="PSXLayer/BlurPostProcess" unique_id=479150354]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="LCDOverlay" type="SubViewportContainer" parent="PSXLayer/BlurPostProcess/Viewport" unique_id=1869041558]
+material = ExtResource("2_0v7s0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+stretch = true
+
+[node name="Viewport" type="SubViewport" parent="PSXLayer/BlurPostProcess/Viewport/LCDOverlay" unique_id=277626120]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="DitherBanding" type="SubViewportContainer" parent="PSXLayer/BlurPostProcess/Viewport/LCDOverlay/Viewport" unique_id=222172565]
+material = SubResource("ShaderMaterial_m5nvn")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+stretch_shrink = 3
+
+[node name="Viewport" type="SubViewport" parent="PSXLayer/BlurPostProcess/Viewport/LCDOverlay/Viewport/DitherBanding" unique_id=156757341]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+size = Vector2i(384, 216)
+render_target_update_mode = 4
+
+[node name="Node3D" parent="PSXLayer/BlurPostProcess/Viewport/LCDOverlay/Viewport/DitherBanding/Viewport" unique_id=1160689446 instance=ExtResource("5_l0ykp")]
+
+[node name="InputRelay" type="Node" parent="." unique_id=334702025]
+script = ExtResource("6_vi03e")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=304532901]
+
+[node name="Label" type="Label" parent="." unique_id=698696905]
+offset_left = 1006.0
+offset_top = 604.0
+offset_right = 1150.0
+offset_bottom = 639.0
+text = "Press E"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2096290623]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1004293553]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 648.0
+script = ExtResource("7_hqv46")
+
+[node name="OSLayer" type="CanvasLayer" parent="." unique_id=536658637]
+
+[node name="Desktop" parent="OSLayer" unique_id=1390533739 instance=ExtResource("8_uybk2")]
+offset_left = 79.0
+offset_top = 39.0
+offset_right = 1088.0
+offset_bottom = 594.0
+
+[node name="Panel" type="Panel" parent="OSLayer" unique_id=843943918]
+visible = false
+offset_left = 169.0
+offset_top = 121.0
+offset_right = 1001.0
+offset_bottom = 586.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1631291441]
+script = ExtResource("9_6ddx4")
+
+[node name="NotifiyPanel" type="Panel" parent="CanvasLayer2" unique_id=702774859]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_bottom = 40.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/NotifiyPanel" unique_id=185953000]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 4.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WorldNotifyIcon" type="TextureRect" parent="CanvasLayer2/NotifiyPanel/HBoxContainer" unique_id=1377304747]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("10_xsd6h")
+stretch_mode = 2
+
+[node name="WorldNotify" type="Label" parent="CanvasLayer2/NotifiyPanel/HBoxContainer" unique_id=1856719650]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("11_j7cdt")
+text = "Thiscord"
+autowrap_mode = 2
+
+[node name="NotificationDot" type="Panel" parent="CanvasLayer2/NotifiyPanel" unique_id=1182656551]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 12.0
+offset_bottom = 12.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lab5l")
+
+[node name="FadeLayer" type="CanvasLayer" parent="." unique_id=197073978 groups=["fade_layer"]]
+layer = 100
+script = ExtResource("12_pg6w4")
+
+[node name="FadeRect" type="ColorRect" parent="FadeLayer" unique_id=410498751]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="NightCard" type="Label" parent="FadeLayer" unique_id=2113994867]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_j7cdt")
+theme_override_font_sizes/font_size = 35
+text = "NIGHT 2"
+
+[node name="IntroSequence" type="Node" parent="." unique_id=389478068]
+script = ExtResource("12_lab5l")
+
+[node name="PhotoFlash" type="CanvasLayer" parent="." unique_id=396864721]
+script = ExtResource("13_jsjaj")
+
+[node name="FlashRect" type="ColorRect" parent="PhotoFlash" unique_id=1304996907]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ShutterSound" type="AudioStreamPlayer" parent="PhotoFlash" unique_id=747174053]
+unique_name_in_owner = true
+stream = ExtResource("14_4ndus")
+
+[node name="HintLayer" type="CanvasLayer" parent="." unique_id=2139136469]
+unique_name_in_owner = true
+layer = 50
+script = ExtResource("14_hi27x")
+key_e = ExtResource("15_ym66k")
+key_mouse_right = ExtResource("16_owc7f")
+key_tab = ExtResource("17_4ndus")
+key_c = ExtResource("18_lsrei")
+key_esc = ExtResource("19_pg6w4")
+key_mouse_left = ExtResource("20_owc7f")
+
+[node name="HintBox" type="VBoxContainer" parent="HintLayer" unique_id=764399692]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 2
+
+[node name="Node" type="Node" parent="." unique_id=232640035]
+script = ExtResource("22_lsrei")

@@ -1,0 +1,13 @@
+{
+  "start": { "from": "jake", "text": "hows it looking", "delay": 1.0, "next": "n2" },
+  "n2": {
+	"from": "jake",
+	"text": "[b]send me a pic[/b] when its done",
+	"delay": 1.5,
+	"responses": [
+	  { "type": "attach", "next": "n3", "requires": "model_photographed" }
+	]
+  },
+  "n3": { "from": "jake", "text": "nice, that actually looks pretty clean", "delay": 1.5, "next": "n4" },
+  "n4": { "from": "jake", "text": "im gonna try to sleep. you should too", "delay": 1.5, "on_end": "allow_sleep" }
+}

@@ -1,0 +1,257 @@
+[gd_scene format=3 uid="uid://dlkekbk62dj5b"]
+
+[ext_resource type="Theme" uid="uid://cdenboeetw58a" path="res://retro_theme.tres" id="1_1xp17"]
+[ext_resource type="Script" uid="uid://dpb5uytgkqixt" path="res://scripts/desktop.gd" id="1_ulbuk"]
+[ext_resource type="PackedScene" uid="uid://bckldfsrgwjqa" path="res://scenes/computer/desktop_icon.tscn" id="2_ejw7u"]
+[ext_resource type="Texture2D" uid="uid://b8b3o6envb5s0" path="res://assets/Wallpapers/razerstyle.png" id="3_i78tf"]
+[ext_resource type="Texture2D" uid="uid://bl60v2xyx2jja" path="res://assets/icons/recycle_bin_empty.png" id="3_y3ias"]
+[ext_resource type="Texture2D" uid="uid://bpv8eqlqe5102" path="res://assets/icons/text_file.png" id="5_0448a"]
+[ext_resource type="Script" uid="uid://bisnuairg1w3x" path="res://scenes/computer/taskbar.gd" id="6_0448a"]
+[ext_resource type="Texture2D" uid="uid://d3n2d75ousndm" path="res://assets/Code_Generated_Image.png" id="8_sq5pv"]
+[ext_resource type="Texture2D" uid="uid://b4fb6a3xmehig" path="res://assets/icons/this_computer.png" id="9_r0ga7"]
+[ext_resource type="Texture2D" uid="uid://dl8rph4ht7srb" path="res://assets/icons/folder_closed.png" id="10_k408o"]
+[ext_resource type="Texture2D" uid="uid://isrrskyps8vu" path="res://assets/icons/discord.png" id="11_cybwl"]
+[ext_resource type="Texture2D" uid="uid://l1duqdg4pim2" path="res://assets/icons/mail.png" id="11_sq5pv"]
+
+[node name="Desktop" type="Control" unique_id=1390533739]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 176.0
+offset_top = 119.0
+offset_right = 993.0
+offset_bottom = 592.0
+theme = ExtResource("1_1xp17")
+script = ExtResource("1_ulbuk")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1378657200]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_i78tf")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Trash" parent="." unique_id=738559587 instance=ExtResource("2_ejw7u")]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 21.0
+offset_right = 89.0
+offset_bottom = 109.0
+icon_name = "Trash"
+
+[node name="Content" parent="Trash" index="0" unique_id=1845468400]
+offset_left = -2.0
+offset_top = 4.0
+offset_right = 46.0
+offset_bottom = 79.0
+
+[node name="Icon" parent="Trash/Content" index="0" unique_id=1986021901]
+texture = ExtResource("3_y3ias")
+
+[node name="Caption" parent="Trash/Content" index="1" unique_id=932885816]
+text = "Trash Can"
+
+[node name="Terminal" parent="." unique_id=493180718 groups=["terminal_icon"] instance=ExtResource("2_ejw7u")]
+visible = false
+layout_mode = 0
+offset_left = 181.0
+offset_top = 136.0
+offset_right = 253.0
+offset_bottom = 224.0
+icon_name = "terminal"
+
+[node name="Caption" parent="Terminal/Content" parent_id_path=PackedInt32Array(493180718, 1845468400) index="1" unique_id=932885816]
+text = "Terminal"
+
+[node name="Readme_txt" parent="." unique_id=353005482 instance=ExtResource("2_ejw7u")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 264.0
+offset_right = 88.0
+offset_bottom = 352.0
+icon_name = "readme"
+
+[node name="Icon" parent="Readme_txt/Content" parent_id_path=PackedInt32Array(353005482, 1845468400) index="0" unique_id=1986021901]
+texture = ExtResource("5_0448a")
+
+[node name="Caption" parent="Readme_txt/Content" parent_id_path=PackedInt32Array(353005482, 1845468400) index="1" unique_id=932885816]
+text = "Readme.txt"
+
+[node name="Taskbar" type="Panel" parent="." unique_id=1936428031]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("6_0448a")
+
+[node name="Bar" type="HBoxContainer" parent="Taskbar" unique_id=68975049]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="Taskbar/Bar" unique_id=894990802]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Taskbar/Bar/StartButton" unique_id=609837664]
+layout_mode = 0
+offset_top = 7.0
+offset_right = 28.0
+offset_bottom = 35.0
+texture = ExtResource("8_sq5pv")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Taskbar/Bar/StartButton" unique_id=1650147391]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 8.0
+offset_right = 68.0
+offset_bottom = 31.0
+text = "Start"
+
+[node name="WindowButtons" type="HBoxContainer" parent="Taskbar/Bar" unique_id=55062649]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ClockLabel" type="Label" parent="Taskbar/Bar" unique_id=1996714888]
+unique_name_in_owner = true
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 10
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="Taskbar/Bar" unique_id=1854401374]
+layout_mode = 2
+
+[node name="Settings" parent="." unique_id=2146672804 instance=ExtResource("2_ejw7u")]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 25.0
+offset_right = 161.0
+offset_bottom = 113.0
+icon_name = "settings"
+
+[node name="Icon" parent="Settings/Content" parent_id_path=PackedInt32Array(2146672804, 1845468400) index="0" unique_id=1986021901]
+texture = ExtResource("9_r0ga7")
+
+[node name="Caption" parent="Settings/Content" parent_id_path=PackedInt32Array(2146672804, 1845468400) index="1" unique_id=932885816]
+text = "Settings"
+
+[node name="Documents" parent="." unique_id=808150585 instance=ExtResource("2_ejw7u")]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 135.0
+offset_right = 87.0
+offset_bottom = 223.0
+icon_name = "documents"
+
+[node name="Icon" parent="Documents/Content" parent_id_path=PackedInt32Array(808150585, 1845468400) index="0" unique_id=1986021901]
+texture = ExtResource("10_k408o")
+
+[node name="Caption" parent="Documents/Content" parent_id_path=PackedInt32Array(808150585, 1845468400) index="1" unique_id=932885816]
+text = "Files"
+autowrap_mode = 2
+
+[node name="Chat" parent="." unique_id=1407752662 instance=ExtResource("2_ejw7u")]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 136.0
+offset_right = 161.0
+offset_bottom = 224.0
+icon_name = "chat"
+
+[node name="Icon" parent="Chat/Content" parent_id_path=PackedInt32Array(1407752662, 1845468400) index="0" unique_id=1986021901]
+texture = ExtResource("11_cybwl")
+
+[node name="Caption" parent="Chat/Content" parent_id_path=PackedInt32Array(1407752662, 1845468400) index="1" unique_id=932885816]
+text = "Thiscord"
+
+[node name="Mail" parent="." unique_id=431077995 instance=ExtResource("2_ejw7u")]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 25.0
+offset_right = 253.0
+offset_bottom = 113.0
+icon_name = "mail"
+
+[node name="Icon" parent="Mail/Content" parent_id_path=PackedInt32Array(431077995, 1845468400) index="0" unique_id=1986021901]
+texture = ExtResource("11_sq5pv")
+
+[node name="Caption" parent="Mail/Content" parent_id_path=PackedInt32Array(431077995, 1845468400) index="1" unique_id=932885816]
+text = "Mail"
+
+[node name="Toast" type="PanelContainer" parent="." unique_id=1304692423]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -178.0
+offset_top = -144.0
+offset_right = -1.0
+offset_bottom = -44.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Toast" unique_id=1134241947]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Toast/VBoxContainer" unique_id=1599993709]
+layout_mode = 2
+
+[node name="ToastIcon" type="TextureRect" parent="Toast/VBoxContainer/HBoxContainer" unique_id=816038993]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("11_sq5pv")
+stretch_mode = 2
+
+[node name="ToastTitle" type="Label" parent="Toast/VBoxContainer/HBoxContainer" unique_id=1125232028]
+unique_name_in_owner = true
+layout_mode = 2
+text = "antivirus"
+horizontal_alignment = 1
+
+[node name="ToastBody" type="Label" parent="Toast/VBoxContainer" unique_id=466410935]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "renamed file"
+
+[node name="StartMenu" type="PanelContainer" parent="." unique_id=1518794173]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -62.0
+offset_right = 20.0
+offset_bottom = -42.0
+grow_vertical = 0
+
+[node name="StartMenuList" type="VBoxContainer" parent="StartMenu" unique_id=413004119]
+unique_name_in_owner = true
+layout_mode = 2
+
+[editable path="Trash"]
+[editable path="Terminal"]
+[editable path="Readme_txt"]
+[editable path="Settings"]
+[editable path="Documents"]
+[editable path="Chat"]
+[editable path="Mail"]

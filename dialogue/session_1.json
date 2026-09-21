@@ -1,0 +1,25 @@
+{
+  "start": { "from": "jake", "text": "yo you still up?", "delay": 1.0, "next": "n2" },
+  "n2": {
+	"from": "jake",
+	"text": "obviously you are, it's 2am and your status is green",
+	"responses": [
+	  { "text": "cant sleep", "next": "n3" },
+	  { "text": "you're up too, don't judge", "next": "n3" }
+	]
+  },
+  "n3": { "from": "jake", "text": "fair", "delay": 1.0, "next": "n4" },
+  "n4": { "from": "jake", "text": "hey did you ever get that printer working", "delay": 2.0, "next": "n5" },
+  "n5": {
+	"from": "jake",
+	"text": "you were complaining about it for like three weeks straight",
+	"responses": [
+	  { "text": "it works now actually", "next": "n6" },
+	  { "text": "i fixed it. mostly.", "next": "n6" }
+	]
+  },
+  "n6": { "from": "jake", "text": "prove it", "delay": 1.5, "next": "n7" },
+  "n7": { "from": "jake", "text": "[b]print something.[/b] i wanna see", "delay": 1.0, "next": "n7b" },
+  "n7b": { "from": "jake", "text": "open [b]Files[/b], you've got something in there to print", "delay": 2.0, "next": "wait_print" },
+  "wait_print": { "from": "jake", "text": "[b]send it to the printer, then go hit the button.[/b] im waiting", "delay": 3.0 }
+}

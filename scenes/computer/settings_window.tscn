@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dg12fu2p8sp6b"]
+
+[ext_resource type="PackedScene" uid="uid://bis8dmpgwpjl" path="res://scenes/computer/app_window.tscn" id="1_kjo77"]
+[ext_resource type="Script" uid="uid://3cr5y2o1qrrs" path="res://scenes/computer/settings_window.gd" id="2_iu22o"]
+[ext_resource type="Texture2D" uid="uid://b4fb6a3xmehig" path="res://assets/icons/this_computer.png" id="3_jmr26"]
+
+[node name="AppWindow" unique_id=687609960 instance=ExtResource("1_kjo77")]
+script = ExtResource("2_iu22o")
+window_icon = ExtResource("3_jmr26")
+
+[node name="TitleBar_Content#Label" type="Label" parent="TitleBar" parent_id_path=PackedInt32Array(1510801857) index="0" unique_id=773440840]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "settings"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" parent_id_path=PackedInt32Array(661532062) index="0" unique_id=746069457]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" index="0" unique_id=544634135]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" index="0" unique_id=138502179]
+layout_mode = 2
+text = "  Wallpaper"
+
+[node name="WallpaperOption" type="OptionButton" parent="MarginContainer/VBoxContainer/HBoxContainer" index="1" unique_id=456252900]
+unique_name_in_owner = true
+layout_mode = 2

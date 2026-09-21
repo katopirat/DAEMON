@@ -1,0 +1,21 @@
+[gd_resource type="Theme" format=3 uid="uid://gei7cfdk5kkp"]
+
+[ext_resource type="Texture2D" uid="uid://liiugn21rdww" path="res://assets/ui/Windows_Toggle_Active.png" id="1_6o0f8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7gsan"]
+texture = ExtResource("1_6o0f8")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6o0f8"]
+texture = ExtResource("1_6o0f8")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[resource]
+ItemList/styles/panel = SubResource("StyleBoxTexture_7gsan")
+ScrollContainer/styles/panel = SubResource("StyleBoxTexture_6o0f8")

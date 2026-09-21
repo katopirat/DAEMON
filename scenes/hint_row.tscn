@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bxh6p0lsecu1x"]
+
+[ext_resource type="Script" uid="uid://bvmstoke6oobi" path="res://scenes/hint_row.gd" id="1_mfcib"]
+[ext_resource type="Texture2D" uid="uid://d2w41a32h6nld" path="res://assets/kenney_input-prompts_1.5/Keyboard & Mouse/Default/keyboard_escape.png" id="2_km4ll"]
+
+[node name="HintRow" type="HBoxContainer" unique_id=1525216066]
+offset_right = 69.0
+offset_bottom = 64.0
+script = ExtResource("1_mfcib")
+
+[node name="KeyIcon" type="TextureRect" parent="." unique_id=1846183932]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("2_km4ll")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="HintText" type="Label" parent="." unique_id=1127680369]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
