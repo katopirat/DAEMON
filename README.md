@@ -1,8 +1,8 @@
 # DAEMON
 
-*A friend messages you late at night asking for small favors. You never ask why.*
+*a friend messages u late at night asking for small favors. u never ask why.*
 
-[![Play on itch.io](https://img.shields.io/badge/Play-itch.io-fa5c5c?style=for-the-badge&logo=itch.io)](TVŮJ_ODKAZ_NA_ITCH)
+[![Play on itch.io](https://img.shields.io/badge/Play-itch.io-fa5c5c?style=for-the-badge&logo=itch.io)](https://katopiratgames.itch.io/daemon)
 [![Download Windows](https://img.shields.io/badge/Download-Windows-0078D6?style=for-the-badge&logo=windows)](https://github.com/katopirat/DAEMON/releases/latest)
 
 ![Godot](https://img.shields.io/badge/Godot-4.7-478CBF?logo=godotengine&logoColor=white)
@@ -11,40 +11,40 @@
 
 ## About
 
-It's 2am. Your friend is online. He wants you to print something.
+its 2am. and your friend is online and wants you to print something.
 
-DAEMON is a first-person psychological horror game about a 3D printer, a friend who won't stop messaging you, and an operating system that's a little too honest about what it sees.
+DAEMON is a short first-person psychological horror about a 3D printer, a friend who wont stop messaging u, and a fake OS that is insprired by win 95. 
 
-You'll spend most of the game sitting at a desk — checking messages, sending files, waiting for a print to finish. It's quiet. It's mundane. That's the point.
+u spend most of the game just sitting at a desk checking messages sending files and waiting for prints to finish. its quiet and mundane and thats exactly the point.
 
-Made solo for [Hack Club Stardance](https://hackclub.com).
+made solo for [Hack Club Stardance](https://stardance.hackclub.com/).
 
 ## Screenshots
 
-![Chat](screenshots/chat.png)
+![Chat](screenshots/computer.png)
 ![Printer](screenshots/printer.png)
 ![File Explorer](screenshots/files.png)
 ![Ending](screenshots/ending.png)
 
 ## Features
 
-- A fully simulated in-game OS — a real file explorer that reads files off disk, a chat client, a mail client, a terminal, all rendered in crisp Windows 95 style
-- A working 3D printer with its own physics and sound design
-- A world rendered in gritty PSX-era visuals
-- A story told almost entirely through what your "friend" says to you, and what he doesn't
+- fully simulated in-game OS. file explorer reads actual files from ur disk chat client mail and terminal all in classic win95 style
+- working 3D printer with its own physics and sounds
+- psx era low poly graphics and shaders 
+- story told mostly through what ur "friend" messages u and what he leaves out
 
 ## Controls
 
 | Key | Action |
 |---|---|
-| WASD | Move |
-| Mouse | Look |
-| E | Interact |
-| Left Click | Grab objects |
-| Tab + Mouse | Rotate held object |
-| C | Take photo |
-| Esc | Leave computer |
-| F11 | Toggle fullscreen |
+| WASD | move |
+| Mouse | look |
+| E | interact |
+| Left Click | grab objects |
+| Tab + Mouse | rotate held object |
+| C | take photo |
+| Esc | leave computer |
+| F11 | toggle fullscreen |
 
 ## Built with
 
@@ -52,4 +52,4 @@ Godot 4.7, GDScript
 
 ## Credits
 
-Full credits (assets, sound, fonts) are available in-game via the Credits screen.
+full credits for assets sound and fonts are in the game menu. :ghost:
