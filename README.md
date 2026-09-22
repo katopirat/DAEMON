@@ -26,7 +26,7 @@ E - Interact
 Left Click - Grab objects
 Tab + Mouse - Rotate held object
 C - Take photo
-Esc - Leave computer
+Esc - Leave computer or 3D printer
 F11 - Toggle fullscreen
 
 ## Built with
