@@ -17,7 +17,7 @@ DAEMON is a short first-person psychological horror about a 3D printer, a friend
 
 u spend most of the game just sitting at a desk checking messages sending files and waiting for prints to finish. its quiet and mundane and thats exactly the point.
 
-made solo for [Hack Club Stardance](https://stardance.hackclub.com/).
+made solo for [Hack Club Stardance](https://stardance.hackclub.com/)
 
 ## Screenshots
 
@@ -52,4 +52,4 @@ Godot 4.7, GDScript
 
 ## Credits
 
-full credits for assets sound and fonts are in the game menu. :ghost:
+full credits for assets sound and fonts are in the game menu. 
